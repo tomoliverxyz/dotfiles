@@ -16,4 +16,10 @@ export LESSHISTFILE="$HOME/.cache/history/less"
 
 # misc
 #
-export PF_INFO="ascii title os de shell kernel pkgs memory"
+export PF_INFO="ascii title os wm shell kernel pkgs memory"
+
+# start hyprland
+#
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+    exec Hyprland
+fi
