@@ -1,0 +1,15 @@
+#
+# starship config
+#
+
+# disable newlines after ran commands
+#
+add_newline = false
+
+# modules
+#
+[line_break]
+disabled = true
+
+[battery]
+disabled = true

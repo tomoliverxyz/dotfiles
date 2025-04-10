@@ -1,0 +1,92 @@
+// -*- mode: jsonc -*-
+
+//
+// waybar config
+//
+
+{
+    "margin-top": 10,
+    "margin-bottom": 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "height": 32,
+    "spacing": 12,
+    "modules-left": [
+        "hyprland/workspaces",
+        "power-profiles-daemon"
+    ],
+    "modules-center": [],
+    "modules-right": [
+        "memory",
+        "cpu",
+        "pulseaudio",
+        "battery",
+        "clock",
+        "tray"
+    ],
+    "hyprland/workspaces": {
+        "persistent-workspaces": {
+            "eDP-1": 10
+        }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "timezone": "Europe/London",
+        "format": " {:%d/%m/%Y  %H:%M}",
+        "tooltip": false
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false,
+        "on-click": "ghostty -e htop"
+    },
+    "memory": {
+        "format": " {}%",
+        "tooltip": false,
+        "on-click": "ghostty -e htop"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip": false,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}% {format_source}",
+        "format-muted": " {format_source}",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "ghostty -e pulsemixer",
+        "tooltip": false
+    }
+}
