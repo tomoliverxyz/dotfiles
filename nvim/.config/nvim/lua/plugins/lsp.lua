@@ -16,7 +16,7 @@ return {
       ui = { border = 'rounded' }
     })
     require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls', 'zls' }
+      ensure_installed = { 'clangd', 'cmake' }
     })
 
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
@@ -25,7 +25,7 @@ return {
     local cmp = require('cmp')
 
     -- setup lsp servers
-    local servers = { 'lua_ls', 'zls' }
+    local servers = { 'clangd', 'cmake' }
     for _, lsp in ipairs(servers) do
       lspconfig[lsp].setup({
         capabilities = capabilities

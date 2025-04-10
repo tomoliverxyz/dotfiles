@@ -3,13 +3,13 @@ return {
   config = function()
     require('conform').setup({
       formatters = {
-        zig_fmt = {
-          command = 'zig fmt',
-          stdin = true
+        ['clang-format'] = {
+          prepend_args = { '--style=file', '--fallback-style=LLVM' }
         }
       },
       formatters_by_ft = {
-        zig = { 'zig_fmt' }
+        c = { 'clang_format' },
+        cpp = { 'clang_format' }
       },
       format_on_save = {
         lsp_format = 'fallback',

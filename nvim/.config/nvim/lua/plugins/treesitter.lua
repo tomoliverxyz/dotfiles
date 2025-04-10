@@ -6,9 +6,9 @@ return {
     configs.setup({
       ensure_installed = {
         -- required
-        'c', 'lua', 'vim', 'vimdoc', 'query',
-        -- misc
-        'zig'
+        'lua', 'vim', 'vimdoc', 'query',
+        -- cpp development
+        'c', 'cmake', 'cpp'
       },
       highlight = { enable = true },
       indent = { enable = true }
