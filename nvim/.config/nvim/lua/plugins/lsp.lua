@@ -1,10 +1,12 @@
 return {
+  -- autopairs
   { 'windwp/nvim-autopairs',
     event = 'InsertEnter',
     config = function()
       require('nvim-autopairs').setup({})
     end
   },
+  -- lsp
   { 'neovim/nvim-lspconfig',
     dependencies = {
       -- autocomplete
@@ -86,7 +88,7 @@ return {
       -- autopairs and autocomplete
       cmp.event:on('confirm_done', autopairs.on_confirm_done())
 
-      -- keybindings
+      -- keybinds
       vim.keymap.set('n', '<leader>mm', ':Mason<CR>', {})
     end
   }
