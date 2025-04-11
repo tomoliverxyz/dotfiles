@@ -83,19 +83,19 @@ button:hover {
 }
 
 #power-profiles-daemon.balanced {
-    color: #94e2d5;
+    color: #f5c2e7;
 }
 
 #power-profiles-daemon.performance {
-    color: #f38ba8;
+    color: #eba0ac;
 }
 
 #power-profiles-daemon.power-saver {
-    color: #a6e3a1;
+    color: #94e2d5;
 }
 
 #cpu {
-    color: #f38ba8;
+    color: #f2cdcd;
 }
 
 #memory {
