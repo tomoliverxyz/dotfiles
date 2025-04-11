@@ -33,11 +33,26 @@ return {
       local cmp = require('cmp')
       local autopairs = require('nvim-autopairs.completion.cmp')
 
+      -- diagnostics config
+      vim.diagnostic.config({ virtual_text = true })
+
       -- servers
       local servers = { 'clangd', 'cmake' }
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup({
-          capabilities = capabilities
+          capabilities = capabilities,
+          on_attach = function(_, bufnr)
+            -- keybind options
+            local opts = { noremap = true, silent = true, buffer = bufnr }
+            -- lsp keybinds
+            vim.keymap.set('n', 'gD', vim.lsp.buf.definition, opts)
+            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+            vim.keymap.set('n', 'K', function() vim.lsp.buf.hover({ border = 'rounded' }) end, opts)
+            -- telescope keybinds
+            vim.keymap.set('n', '<leader>gr', ':Telescope lsp_references<CR>', opts)
+            vim.keymap.set('n', '<leader>ee', ':Telescope diagnostics<CR>', opts)
+          end
         })
       end
 
