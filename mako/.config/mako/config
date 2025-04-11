@@ -8,6 +8,7 @@ font=JetBrains Mono 11
 background-color=#1e1e2eff
 text-color=#cdd6f4ff
 border-color=#cba6f7ff
+border-radius=10
 progress-color=over #313244ff
 max-icon-size=48
 icon-path=/usr/share/icons/Papirus-Dark
