@@ -7,7 +7,7 @@ return {
       ensure_installed = {
         -- required
         'lua', 'vim', 'vimdoc', 'query',
-        -- cpp development
+        -- low level development
         'c', 'cmake', 'cpp'
       },
       highlight = { enable = true },

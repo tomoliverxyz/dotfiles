@@ -23,7 +23,14 @@ return {
     'nvim-lualine/lualine.nvim',
     config = function()
       require('lualine').setup({
-        options = { theme = 'catppuccin' }
+        options = {
+          theme = 'catppuccin',
+          ignore_focus = {
+            'dapui_watches', 'dapui_breakpoints',
+            'dapui_scopes', 'dapui_console',
+            'dapui_stacks', 'dap-repl'
+          }
+        }
       })
     end
   }
